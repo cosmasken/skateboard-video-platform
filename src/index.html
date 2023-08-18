@@ -53,7 +53,7 @@
 
 <body class="bg-white dark:bg-[#1F1D2B]">
 <!--Sidebar-->
-<aside class="fixed top-0 z-10 ml-[-100%] flex h-screen w-full flex-col justify-between
+<aside class="fixed top-0 z-10 ml-[-100%] overflow-y-auto flex h-screen w-full flex-col justify-between
  bg-white px-8 pb-3  dark:bg-[#1F1D2B] md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
     <div>
         <div class=" py-4 text-center">
@@ -64,19 +64,7 @@
 
 
         <ul class="mt-[50px] space-y-4 divide-y divide-[#34373C]  tracking-wide">
-            <li>
-                <a onclick="html()" href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-gray-600 dark:text-gray-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                         class="h-6 w-6 text-gray-300 group-hover:text-emerald-500">
-                        <path fill-rule="evenodd"
-                              d="M12 5.25c1.213 0 2.415.046 3.605.135a3.256 3.256 0 013.01 3.01c.044.583.077 1.17.1 1.759L17.03 8.47a.75.75 0 10-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 00-1.06-1.06l-1.752 1.751c-.023-.65-.06-1.296-.108-1.939a4.756 4.756 0 00-4.392-4.392 49.422 49.422 0 00-7.436 0A4.756 4.756 0 003.89 8.282c-.017.224-.033.447-.046.672a.75.75 0 101.497.092c.013-.217.028-.434.044-.651a3.256 3.256 0 013.01-3.01c1.19-.09 2.392-.135 3.605-.135zm-6.97 6.22a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.752-1.751c.023.65.06 1.296.108 1.939a4.756 4.756 0 004.392 4.392 49.413 49.413 0 007.436 0 4.756 4.756 0 004.392-4.392c.017-.223.032-.447.046-.672a.75.75 0 00-1.497-.092c-.013.217-.028.434-.044.651a3.256 3.256 0 01-3.01 3.01 47.953 47.953 0 01-7.21 0 3.256 3.256 0 01-3.01-3.01 47.759 47.759 0 01-.1-1.759L6.97 15.53a.75.75 0 001.06-1.06l-3-3z"
-                              clip-rule="evenodd"/>
-                    </svg>
 
-                    <span class="font-bold group-hover:text-emerald-500 dark:group-hover:text-emerald-500">Dark Mode</span>
-                </a>
-            </li>
             <li class="flex flex-col overflow-auto space-y-8">
                 <a href="#"
                    class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
@@ -320,7 +308,7 @@
                 <div class="relative flex items-center text-gray-400 focus-within:text-emerald-400">
 
                     <input type="search" name="leadingIcon" id="leadingIcon" placeholder="Search here"
-                           class="w-full rounded-xl border border-gray-300 py-2.5 pl-4 pr-4 text-sm text-gray-600 outline-none  focus:border-emerald-300 dark:border-gray-700 dark:opacity-10 dark:bg-white"/>
+                           class="w-full placeholder-[#808191] rounded-xl border border-gray-300 py-2.5 pl-4 pr-4 text-sm text-gray-600 outline-none  focus:border-emerald-300 dark:border-gray-700 dark:opacity-10 dark:bg-white"/>
 <!--                    <span class="absolute left-4 flex h-6 items-center border-r border-gray-300 pr-3 dark:border-gray-700">-->
 <!--                <svg xmlns="http://ww50w3.org/2000/svg" class="w-4 fill-current" viewBox="0 0 35.997 36.004">-->
 <!--                  <path id="Icon_awesome-search" data-name="search"-->
@@ -368,10 +356,13 @@
         </div>
     </div>
 
-    <div class="pr-7 pt-6 2xl:container">
+    <div class="pr-7  2xl:container">
 
         <div class="h-[80vh] justify-center">
-            <span class="text-base lg:text-[40px] leading-[40px] font-semibold text-black dark:text-white pt-2 pb-2 lg:pt-10 lg:pb-7">Discover</span>
+            <div class=" pt-2 pb-2 lg:pt-10 lg:pb-7">
+                <span class="text-base lg:text-[40px] leading-[40px] font-semibold text-black dark:text-white ">Discover</span>
+
+            </div>
 
             <div class="relative  flex flex-col xl:flex-row justify-between xl:space-x-5 w-full">
 
