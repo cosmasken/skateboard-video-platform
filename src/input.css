@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+    html {
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@layer components {
+    .scrollbar::-webkit-scrollbar {
+        @apply w-[4.5px] h-1;
+    }
+    .scrollbar::-webkit-scrollbar-track {
+        @apply rounded-full bg-slate-100;
+    }
+    .scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 rounded-full border-4 border-gray-400;
+    }
+    button,
+    a {
+        @apply transition-colors duration-200
+    }
+}
