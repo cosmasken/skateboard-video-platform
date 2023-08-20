@@ -10,6 +10,7 @@ module.exports = {
                 poppins: ['Poppins', 'sans-serif'],
                 inter: ['Inter', 'sans-serif'],
             },
+
             colors: {
                 "skateboard-grey": {
                     50: "#1F1D2B",

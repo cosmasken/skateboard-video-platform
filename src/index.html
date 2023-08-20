@@ -5,19 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Skateboard Video Platform</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="./build/output.css">
 </head>
 <script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-            extend: {
-                colors: {
-                    clifford: '#da373d',
-                }
-            }
-        }
-    }
+
 
     function html() {
         document.documentElement.classList.toggle("dark")
@@ -56,18 +48,18 @@
 <aside class="fixed top-0 z-10 ml-[-100%] overflow-y-auto flex h-screen w-full flex-col justify-between
  bg-white px-8 pb-3  dark:bg-[#1F1D2B] md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
     <div>
-        <div class=" py-4 text-center">
+        <div class=" py-4 text-left">
             <p class="text-lg font-semibold text-gray-600 dark:text-white">
                 Skateboard
             </p>
         </div>
 
 
-        <ul class="mt-[50px] space-y-4 divide-y divide-[#34373C]  tracking-wide">
+        <ul class="mt-[50px]  divide-y divide-[#34373C]  tracking-wide">
 
-            <li class="flex flex-col overflow-auto space-y-8">
+            <li class="flex flex-col pb-6 overflow-auto space-y-6">
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
 
                     <svg width="32" height="32"
                          viewBox="0 0 32 32"
@@ -81,10 +73,10 @@
                               d="M14.093 21.8495V19.811C14.093 19.2906 14.5179 18.8688 15.0421 18.8688L16.9582 18.8688C17.2099 18.8688 17.4513 18.968 17.6293 19.1447C17.8073 19.3214 17.9073 19.5611 17.9073 19.811V21.8495C17.9057 22.0658 17.9912 22.2738 18.1447 22.4273C18.2983 22.5809 18.5072 22.6672 18.7251 22.6672H20.0324C20.6429 22.6688 21.229 22.4291 21.6612 22.0011C22.0935 21.5731 22.3365 20.9919 22.3365 20.3858V14.5785C22.3365 14.0889 22.1178 13.6245 21.7395 13.3103L17.2925 9.78447C16.5189 9.16627 15.4105 9.18623 14.6601 9.83188L10.3145 13.3103C9.91829 13.6152 9.6815 14.081 9.6698 14.5785V20.3799C9.6698 21.6431 10.7014 22.6672 11.9739 22.6672H13.2513C13.704 22.6672 14.0718 22.3047 14.0751 21.8554L14.093 21.8495Z"
                               fill="white"/>
                     </svg>
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Discover</span>
+                    <span class="font-normal text-base group-hover:text-[#FF7551]  dark:group-hover:text-white">Discover</span>
                 </a>
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
 
                     <svg xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 32 32"
@@ -104,10 +96,10 @@
                     </svg>
 
 
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Trending</span>
+                    <span class="font-normal text-base group-hover:text-[#FF7551] dark:group-hover:text-white">Trending</span>
                 </a>
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
 
                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -119,10 +111,10 @@
                     </svg>
 
 
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Streaming</span>
+                    <span class="font-normal text-base group-hover:text-[#FF7551]  dark:group-hover:text-white">Streaming</span>
                 </a>
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
 
                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="34" height="35" viewBox="0 0 34 35"
                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -151,10 +143,10 @@
                         </defs>
                     </svg>
 
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Playlist</span>
+                    <span class="font-normal text-base group-hover:text-[#FF7551]  dark:group-hover:text-white">Playlist</span>
                 </a>
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
 
                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -192,12 +184,12 @@
                     </svg>
 
 
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Bookmark</span>
+                    <span class="font-normal text-base group-hover:text-[#FF7551]  dark:group-hover:text-white">Bookmark</span>
                 </a>
             </li>
-            <li class="flex flex-col overflow-auto space-y-8">
+            <li class="flex flex-col py-6 overflow-auto space-y-6">
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
 
                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -209,10 +201,10 @@
                     </svg>
 
 
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Live Stream</span>
+                    <span class="font-normal text-base  group-hover:text-[#FF7551]   dark:group-hover:text-white">Live Stream</span>
                 </a>
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
 
                     <svg xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 32 32"
@@ -231,10 +223,10 @@
                                 fill="#808191"/>
                     </svg>
 
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Tutorial</span>
+                    <span class="font-normal text-base  group-hover:text-[#FF7551]  dark:group-hover:text-white">Tutorial</span>
                 </a>
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md py-1 text-black dark:text-[#808191]">
 
                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -245,10 +237,10 @@
                               fill="currentColor"/>
                     </svg>
 
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Competition</span>
+                    <span class=" group-hover:text-[#FF7551] font-normal text-base  font-normal dark:group-hover:text-white">Competition</span>
                 </a>
                 <a href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-black dark:text-[#808191]">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="34" height="35" viewBox="0 0 34 35"
                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <g class=" group-hover:text-[#FF7551] group-hover:opacity-90 " opacity="0.1"
@@ -276,12 +268,12 @@
                         </defs>
                     </svg>
 
-                    <span class="font-bold group-hover:text-[#FF7551] dark:group-hover:text-white">Community</span>
+                    <span class=" group-hover:text-[#FF7551] font-normal text-base  font-normal dark:group-hover:text-white">Community</span>
                 </a>
             </li>
             <li>
                 <a onclick="html()" href="#"
-                   class="group flex items-center space-x-4 rounded-md px-4 py-1 text-gray-600 dark:text-gray-300">
+                   class="group flex items-center space-x-4 rounded-md  py-1 text-gray-600 dark:text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                          class="h-6 w-6 text-gray-300 group-hover:text-emerald-500">
                         <path fill-rule="evenodd"
@@ -289,7 +281,7 @@
                               clip-rule="evenodd"/>
                     </svg>
 
-                    <span class="font-bold group-hover:text-emerald-500 dark:group-hover:text-emerald-500">Dark Mode</span>
+                    <span class="font-bold group-hover:text-emerald-500 text-sm font-normal dark:group-hover:text-emerald-500">Dark Mode</span>
                 </a>
             </li>
 
@@ -301,14 +293,14 @@
 
 
 <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-    <div class="sticky top-0 z-10 h-16 border-b bg-white dark:border-[#1F1D2B] dark:bg-[#1F1D2B] lg:py-2.5">
-        <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
+    <div class="sticky lg:pt-7 lg:pb-10  top-0 z-10 border-b bg-white dark:border-[#1F1D2B] dark:bg-[#1F1D2B]">
+        <div class="flex items-center justify-between space-x-4  2xl:container">
             <!--search bar -->
             <div hidden class="md:block w-[625px]">
                 <div class="relative flex items-center text-gray-400 focus-within:text-emerald-400">
 
                     <input type="search" name="leadingIcon" id="leadingIcon" placeholder="Search here"
-                           class="w-full placeholder-[#808191] rounded-xl border border-gray-300 py-2.5 pl-4 pr-4 text-sm text-gray-600 outline-none  focus:border-emerald-300 dark:border-gray-700 dark:opacity-10 dark:bg-white"/>
+                           class="w-full placeholder-[#808191] rounded-xl border border-gray-300 py-2.5 pl-4 pr-4 text-sm text-black dark:text-black outline-none  focus:border-emerald-300 dark:border-gray-700 dark:focus:opacity-100 dark:opacity-10 dark:bg-white"/>
 <!--                    <span class="absolute left-4 flex h-6 items-center border-r border-gray-300 pr-3 dark:border-gray-700">-->
 <!--                <svg xmlns="http://ww50w3.org/2000/svg" class="w-4 fill-current" viewBox="0 0 35.997 36.004">-->
 <!--                  <path id="Icon_awesome-search" data-name="search"-->
@@ -353,39 +345,40 @@
                          src="https://placeimg.com/192/192/people"/>
                 </div>
             </div>
+
         </div>
     </div>
 
     <div class="pr-7  2xl:container">
 
         <div class="h-[80vh] justify-center">
-            <div class=" pt-2 pb-2 lg:pt-10 lg:pb-7">
+            <div class="lg:mb-7">
                 <span class="text-base lg:text-[40px] leading-[40px] font-semibold text-black dark:text-white ">Discover</span>
 
             </div>
 
-            <div class="relative  flex flex-col xl:flex-row justify-between xl:space-x-5 w-full">
+            <div class="relative  flex flex-col md:flex-row justify-between md:space-x-5 w-full">
 
 
-                <div class="relative xl:h-[360px] xl:w-2/3  rounded-xl bg-gradient-to-r from-teal-500 to-transparent bg-no-repeat bg-cover bg-blend-multiply"
+                <div class="relative md:h-[360px] md:w-2/3  rounded-2xl bg-gradient-to-r from-teal-500 to-transparent bg-no-repeat bg-cover bg-blend-multiply"
                      style="background-image: url('./images/bg-1.svg');">
 
                     <div class="absolute bottom-5 right-5 flex backdrop-blur-sm hidden md:block">
                         <span class="text-medium text-[10px] rounded-full opacity-50 bg-[#242730] px-2 text-white py-[5px]">7 min</span>
                     </div>
-                    <div class="relative pl-10 pl-5 flex  flex-col w-full xl:w-2/5 pt-10 pb-5 xl:space-y-7 justify-start">
-                        <span class="text-base xl:text-3xl font-semibold text-left text-white tracking-[0.3px]">How to do
+                    <div class="relative lg:pl-10 pl-5 flex  flex-col w-full md:w-2/5 pt-10 pb-5 md:space-y-7 justify-start">
+                        <span class="text-base md:text-[30px] leading-[30px] font-medium text-left text-white tracking-[0.3px]">How to do
                     Basic Jumping
                     and how to
                     landing safely
                         </span>
 
-                        <div class="flex flex-col items-start xl:flex-row shrink-0 xl:items-center space-x-3">
+                        <div class="flex flex-col items-start md:flex-row shrink-0 md:items-center space-x-3">
 
                             <div>
                                 <img src="images/profile.png" class="h-[60px]"/>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="flex flex-col space-y-2">
                                 <p class="text-black dark:text-white font-medium text-[15px] leading-[15px] ">
                                     Thomas Hope
                                 </p>
@@ -408,54 +401,16 @@
 
                 </div>
 
-                <div class="relative hidden xl:h-[360px] xl:block w-full  xl:w-1/3  rounded-xl  xl:bg-cover bg-no-repeat bg-blend-multiply"
-                     style="background-image: url('./images/bg-2.svg');">
 
-                    <div class="absolute bottom-5 right-5 flex backdrop-blur-sm hidden md:block">
-                        <span class="text-medium text-[10px] rounded-full opacity-50 bg-[#242730] px-2 text-white py-[5px]">10 min</span>
-                    </div>
-                    <div class="relative xl:pl-10 pl-5 flex flex-col w-full xl:w-2/3 pt-10 pb-5 space-y-7 justify-start">
-                        <span class="text-3xl font-semibold text-left text-white tracking-[0.3px]">
-                    Skateboard
-                    Tips You need
-                    to know
-                        </span>
-
-                        <div class="flex flex-col items-start space-y-5">
-                            <div class="flex flex-col">
-                                <p class="text-black dark:text-white font-medium text-[15px] leading-[15px] ">
-                                    Thomas Hope
-                                </p>
-
-
-                                <p class="text-xs font-normal opacity-80 text-black dark:text-white">
-                                    53K views
-                                    <span class="text-black dark:text-white text-xs font-normal opacity-80">
-                                       •
-                                    </span>
-
-                                    2 weeks ago
-                                </p>
-
-
-                            </div>
-                            <div>
-                                <img src="images/profile.png" class="h-[60px]"/>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="relative block xl:hidden w-full  xl:w-1/3  rounded-xl  bg-gradient-to-r from-[#d37517] to-transparent"
+                <div
+                        style="background-image: url('./images/bg-2.svg');"
+                        class="relative block  w-full  md:w-1/3  rounded-xl  bg-gradient-to-r from-[#d37517] to-transparent bg-cover bg-no-repeat bg-blend-multiply"
                 >
 
                     <div class="absolute bottom-5 right-5 flex backdrop-blur-sm hidden md:block">
                         <span class="text-medium text-[10px] rounded-full opacity-50 bg-[#242730] px-2 text-white py-[5px]">10 min</span>
                     </div>
-                    <div class="relative xl:pl-10 pl-5 flex flex-col w-full xl:w-2/3 pt-10 pb-5 xl:space-y-7 justify-start">
+                    <div class="relative md:pl-10 pl-5 flex flex-col w-full md:w-2/3 pt-10 pb-5 md:space-y-7 justify-start">
                         <span class="text-3xl font-semibold text-left text-white tracking-[0.3px]">
                     Skateboard
                     Tips You need
@@ -497,154 +452,106 @@
 
                 <span class="text-base lg:text-[28px] leading-[28px] font-medium text-black dark:text-white">Most Watched</span>
                 <!-- Contents -->
-                <div class="relative flex w-full snap-x gap-5 overflow-x-auto py-7">
+                <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-5  py-7">
 
-                    <div
-                            class="block relative grow-1  xl:shrink-0 xl:w-[259px] snap-center rounded-2xl bg-white
-                             shadow-lg dark:bg-[#242730]">
-                        <a href="#!">
-                            <img
-                                    class="rounded-t-2xl"
-                                    src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                                    alt=""/>
-                        </a>
-                        <div class="p-5">
-                            <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 xl:pb-3">Andy
-                                Williams</p>
-                            <p class="text-base font-medium dark:text-white text-black pb-2 xl:pb-4">Basic how to ride
-                                your skateboard comfortly</p>
-                            <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                53K views
-                                <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
+                    <div class="max-w-2xl mx-auto">
 
-                                2 weeks ago
-                            </p>
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="./images/john.png" alt="">
+                            </a>
+                            <div class="p-5">
+                                <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">Andy
+                                    Williams</p>
+                                <p class="text-base font-medium dark:text-white text-black pb-2 md:pb-4">Basic how to ride
+                                                                   your skateboard comfortly</p>
+                                                               <p class="text-xs font-normal text-black opacity-80 dark:text-white">
+                                                                   53K views
+                                                                   <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
 
+                                                                    2 weeks ago
+                                                               </p>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                    <div class="max-w-2xl mx-auto">
+
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="./images/john.png" alt="">
+                            </a>
+                            <div class="p-5">
+                                <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">Andy
+                                    Williams</p>
+                                <p class="text-base font-medium dark:text-white text-black pb-2 md:pb-4">Basic how to ride
+                                    your skateboard comfortly</p>
+                                <p class="text-xs font-normal text-black opacity-80 dark:text-white">
+                                    53K views
+                                    <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
+
+                                    2 weeks ago
+                                </p>
+
+                            </div>
                         </div>
+
                     </div>
-                    <div
-                            class="block relative grow-1  xl:shrink-0 xl:w-[259px] snap-center rounded-2xl bg-white
-                             shadow-lg dark:bg-[#242730]">
-                        <a href="#!">
-                            <img
-                                    class="rounded-t-2xl"
-                                    src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                                    alt=""/>
-                        </a>
-                        <div class="p-5">
-                            <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 xl:pb-3">Andy
-                                Williams</p>
-                            <p class="text-base font-medium dark:text-white text-black pb-2 xl:pb-4">Basic how to ride
-                                your skateboard comfortly</p>
-                            <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                53K views
-                                <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
+                    <div class="max-w-2xl mx-auto">
 
-                                2 weeks ago
-                            </p>
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="./images/john.png" alt="">
+                            </a>
+                            <div class="p-5">
+                                <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">Andy
+                                    Williams</p>
+                                <p class="text-base font-medium dark:text-white text-black pb-2 md:pb-4">Basic how to ride
+                                    your skateboard comfortly</p>
+                                <p class="text-xs font-normal text-black opacity-80 dark:text-white">
+                                    53K views
+                                    <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
 
+                                    2 weeks ago
+                                </p>
+
+                            </div>
                         </div>
+
                     </div>
-                    <div
-                            class="block relative grow-1  xl:shrink-0 xl:w-[259px] snap-center rounded-2xl bg-white
-                             shadow-lg dark:bg-[#242730]">
-                        <a href="#!">
-                            <img
-                                    class="rounded-t-2xl"
-                                    src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                                    alt=""/>
-                        </a>
-                        <div class="p-5">
-                            <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 xl:pb-3">Andy
-                                Williams</p>
-                            <p class="text-base font-medium dark:text-white text-black pb-2 xl:pb-4">Basic how to ride
-                                your skateboard comfortly</p>
-                            <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                53K views
-                                <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
+                    <div class="max-w-2xl mx-auto">
 
-                                2 weeks ago
-                            </p>
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="./images/john.png" alt="">
+                            </a>
+                            <div class="p-5">
+                                <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">Andy
+                                    Williams</p>
+                                <p class="text-base font-medium dark:text-white text-black pb-2 md:pb-4">Basic how to ride
+                                    your skateboard comfortly</p>
+                                <p class="text-xs font-normal text-black opacity-80 dark:text-white">
+                                    53K views
+                                    <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
 
+                                    2 weeks ago
+                                </p>
+
+                            </div>
                         </div>
-                    </div>
-                    <div
-                            class="block relative grow-1  xl:shrink-0 xl:w-[259px] snap-center rounded-2xl bg-white
-                             shadow-lg dark:bg-[#242730]">
-                        <a href="#!">
-                            <img
-                                    class="rounded-t-2xl"
-                                    src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                                    alt=""/>
-                        </a>
-                        <div class="p-5">
-                            <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 xl:pb-3">Andy
-                                Williams</p>
-                            <p class="text-base font-medium dark:text-white text-black pb-2 xl:pb-4">Basic how to ride
-                                your skateboard comfortly</p>
-                            <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                53K views
-                                <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
 
-                                2 weeks ago
-                            </p>
-
-                        </div>
-                    </div>
-                    <div
-                            class="block relative grow-1  xl:shrink-0 xl:w-[259px] snap-center rounded-2xl bg-white
-                             shadow-lg dark:bg-[#242730]">
-                        <a href="#!">
-                            <img
-                                    class="rounded-t-2xl"
-                                    src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                                    alt=""/>
-                        </a>
-                        <div class="p-5">
-                            <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 xl:pb-3">Andy
-                                Williams</p>
-                            <p class="text-base font-medium dark:text-white text-black pb-2 xl:pb-4">Basic how to ride
-                                your skateboard comfortly</p>
-                            <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                53K views
-                                <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
-
-                                2 weeks ago
-                            </p>
-
-                        </div>
-                    </div>
-                    <div
-                            class="block relative grow-1  xl:shrink-0 xl:w-[259px] snap-center rounded-2xl bg-white
-                             shadow-lg dark:bg-[#242730]">
-                        <a href="#!">
-                            <img
-                                    class="rounded-t-2xl"
-                                    src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                                    alt=""/>
-                        </a>
-                        <div class="p-5">
-                            <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 xl:pb-3">Andy
-                                Williams</p>
-                            <p class="text-base font-medium dark:text-white text-black pb-2 xl:pb-4">Basic how to ride
-                                your skateboard comfortly</p>
-                            <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                53K views
-                                <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
-
-                                2 weeks ago
-                            </p>
-
-                        </div>
                     </div>
 
 
 
-                </div>
-            </div>
 
-        </div>
-    </div>
-</div>
-</body>
-</html>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </body>
+                                    </html>
