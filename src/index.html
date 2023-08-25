@@ -1,557 +1,574 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Skateboard Video Platform</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="./build/output.css">
-</head>
-<script>
+   <head>
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Skateboard Video Platform</title>
+      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+      <link rel="stylesheet" href="./build/output.css">
+   </head>
+   <script>
+    
+      function html() {
+          document.documentElement.classList.toggle("dark")
+      }
+   </script>
+   <style>
+      ::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+      }
+      ::-webkit-scrollbar-track {
+      background-color: rgba(248, 247, 247, 0);
+      }
+      ::-webkit-scrollbar-thumb {
+      background: rgba(16 185 129, 0)
+      }
 
-
-    function html() {
-        document.documentElement.classList.toggle("dark")
-    }
-</script>
-<style>
-    ::-webkit-scrollbar {
-        width: 0px;
-        height: 0px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background-color: rgba(248, 247, 247, 0);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: rgba(16 185 129, 0)
-    }
-
-    body {
-        background-color: black;
-        font-family: Verdana, sans-serif;
-        font-size: 16px;
-        color: gray;
-    }
-
-    h1 {
-        font-family: Georgia, serif;
-        font-size: 60px;
-        color: white;
-    }
-</style>
-
-<body class="bg-white dark:bg-[#1F1D2B]">
-<!--Sidebar-->
-<aside class="fixed top-0 z-10 ml-[-100%] overflow-y-auto flex h-screen w-full flex-col justify-between
- bg-white px-8 pb-3  dark:bg-[#1F1D2B] md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
-    <div>
-        <div class=" py-4 text-left">
-            <p class="text-lg font-semibold text-gray-600 dark:text-white">
-                Skateboard
-            </p>
-        </div>
-
-
-        <ul class="mt-[50px]  divide-y divide-[#34373C]  tracking-wide">
-
-            <li class="flex flex-col pb-6 overflow-auto space-y-6">
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
-
-                    <svg width="32" height="32"
-                         viewBox="0 0 32 32"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class=" text-[#808191] group-hover:text-[#FF7551]"
-                    >
+      input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: #fff;
+}
+   </style>
+   <body class="bg-white dark:bg-[#1F1D2B]">
+      <!--Sidebar-->
+      <aside class="fixed top-0 z-10 ml-[-100%] overflow-y-auto flex h-screen w-full flex-col justify-between
+         bg-white pl-8 pr-[102px] pb-[127px]  dark:bg-[#1F1D2B] md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
+         <div>
+            <div class=" py-4 text-left">
+               <p class="text-lg font-semibold text-gray-600 dark:text-white">
+                  Skateboard
+               </p>
+            </div>
+            <ul class="mt-[50px]  tracking-wide">
+                
+                <li class="pb-6">
+                    <span class="text-[11px] leading-[11px] text-[#808191] font-semibold tracking-[1.5px] ">
+                        MENU
+                    </span>
+                </li>
+               <li class="flex flex-col pb-12 overflow-auto space-y-6 border-b-2 border-[#34373C]">
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
+                     <svg width="32" height="32"
+                        viewBox="0 0 32 32"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class=" text-[#808191] group-hover:text-[#FF7551]"
+                        >
                         <rect x="-0.000610352" width="32" height="32" rx="12" fill="currentColor"
-                              class=" group-hover:text-[#FF7551] group-hover:opacity-90 "/>
+                           class=" group-hover:text-[#FF7551] group-hover:opacity-90 "/>
                         <path class=" group-hover:fill-white group-hover:opacity-90 "
-                              d="M14.093 21.8495V19.811C14.093 19.2906 14.5179 18.8688 15.0421 18.8688L16.9582 18.8688C17.2099 18.8688 17.4513 18.968 17.6293 19.1447C17.8073 19.3214 17.9073 19.5611 17.9073 19.811V21.8495C17.9057 22.0658 17.9912 22.2738 18.1447 22.4273C18.2983 22.5809 18.5072 22.6672 18.7251 22.6672H20.0324C20.6429 22.6688 21.229 22.4291 21.6612 22.0011C22.0935 21.5731 22.3365 20.9919 22.3365 20.3858V14.5785C22.3365 14.0889 22.1178 13.6245 21.7395 13.3103L17.2925 9.78447C16.5189 9.16627 15.4105 9.18623 14.6601 9.83188L10.3145 13.3103C9.91829 13.6152 9.6815 14.081 9.6698 14.5785V20.3799C9.6698 21.6431 10.7014 22.6672 11.9739 22.6672H13.2513C13.704 22.6672 14.0718 22.3047 14.0751 21.8554L14.093 21.8495Z"
-                              fill="white"/>
-                    </svg>
-                    <span class="font-normal text-base group-hover:text-[#FF7551]  dark:group-hover:text-white">Discover</span>
-                </a>
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
-
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 32 32"
-                         fill="currentColor"
-                         width="32" height="32"
-                         class=" text-[#808191] group-hover:text-[#FF7551]"
-                    >
+                           d="M14.093 21.8495V19.811C14.093 19.2906 14.5179 18.8688 15.0421 18.8688L16.9582 18.8688C17.2099 18.8688 17.4513 18.968 17.6293 19.1447C17.8073 19.3214 17.9073 19.5611 17.9073 19.811V21.8495C17.9057 22.0658 17.9912 22.2738 18.1447 22.4273C18.2983 22.5809 18.5072 22.6672 18.7251 22.6672H20.0324C20.6429 22.6688 21.229 22.4291 21.6612 22.0011C22.0935 21.5731 22.3365 20.9919 22.3365 20.3858V14.5785C22.3365 14.0889 22.1178 13.6245 21.7395 13.3103L17.2925 9.78447C16.5189 9.16627 15.4105 9.18623 14.6601 9.83188L10.3145 13.3103C9.91829 13.6152 9.6815 14.081 9.6698 14.5785V20.3799C9.6698 21.6431 10.7014 22.6672 11.9739 22.6672H13.2513C13.704 22.6672 14.0718 22.3047 14.0751 21.8554L14.093 21.8495Z"
+                           fill="white"/>
+                     </svg>
+                     <span class="font-normal text-sm group-hover:text-[#FF7551]  dark:group-hover:text-white">Discover</span>
+                  </a>
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
+                     <svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 32 32"
+                        fill="currentColor"
+                        width="32" height="32"
+                        class=" text-[#808191] group-hover:text-[#FF7551]"
+                        >
                         <rect
-                                class=" group-hover:text-[#FF7551] group-hover:opacity-90 "
-                                opacity="0.1" x="-0.000610352" y="0.000244141" width="32" height="32" rx="12"
-                                fill="currentColor"/>
+                           class=" group-hover:text-[#FF7551] group-hover:opacity-90 "
+                           opacity="0.1" x="-0.000610352" y="0.000244141" width="32" height="32" rx="12"
+                           fill="currentColor"/>
                         <path
-                                class=" group-hover:fill-white group-hover:opacity-90 "
-                                fill-rule="evenodd" clip-rule="evenodd"
-                                d="M15.2265 16.0048L15.2275 16.2409C15.2356 17.1772 15.292 18.0126 15.3894 18.542C15.3894 18.5515 15.4956 19.0766 15.5632 19.2514C15.6694 19.504 15.8614 19.7184 16.1021 19.8543C16.2948 19.9512 16.497 20.0004 16.7086 20.0004C16.875 19.9927 17.1494 19.909 17.3452 19.8388L17.5079 19.7764C18.5857 19.3483 20.646 17.9494 21.4351 17.0938L21.4933 17.034L21.7529 16.7538C21.9166 16.5394 22.0031 16.2772 22.0031 15.9953C22.0031 15.7426 21.926 15.49 21.7718 15.2859C21.7257 15.2197 21.6513 15.1349 21.5852 15.0632L21.3324 14.7987C20.4628 13.9175 18.5799 12.6816 17.6039 12.2721C17.6039 12.2633 16.9974 12.0099 16.7086 12.0004H16.6701C16.2272 12.0004 15.8134 12.253 15.6017 12.6613C15.5439 12.7729 15.4885 12.9916 15.4463 13.1836L15.3705 13.5462C15.2839 14.1293 15.2265 15.0237 15.2265 16.0048ZM11.0053 14.9882C10.4518 14.9882 10.0031 15.4413 10.0031 16.0001C10.0031 16.5589 10.4518 17.012 11.0053 17.012L13.4714 16.7939C13.9056 16.7939 14.2576 16.4392 14.2576 16.0001C14.2576 15.5617 13.9056 15.2063 13.4714 15.2063L11.0053 14.9882Z"
-                                fill="#808191"/>
-                    </svg>
-
-
-                    <span class="font-normal text-base group-hover:text-[#FF7551] dark:group-hover:text-white">Trending</span>
-                </a>
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
-
-                    <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                           class=" group-hover:fill-white group-hover:opacity-90 "
+                           fill-rule="evenodd" clip-rule="evenodd"
+                           d="M15.2265 16.0048L15.2275 16.2409C15.2356 17.1772 15.292 18.0126 15.3894 18.542C15.3894 18.5515 15.4956 19.0766 15.5632 19.2514C15.6694 19.504 15.8614 19.7184 16.1021 19.8543C16.2948 19.9512 16.497 20.0004 16.7086 20.0004C16.875 19.9927 17.1494 19.909 17.3452 19.8388L17.5079 19.7764C18.5857 19.3483 20.646 17.9494 21.4351 17.0938L21.4933 17.034L21.7529 16.7538C21.9166 16.5394 22.0031 16.2772 22.0031 15.9953C22.0031 15.7426 21.926 15.49 21.7718 15.2859C21.7257 15.2197 21.6513 15.1349 21.5852 15.0632L21.3324 14.7987C20.4628 13.9175 18.5799 12.6816 17.6039 12.2721C17.6039 12.2633 16.9974 12.0099 16.7086 12.0004H16.6701C16.2272 12.0004 15.8134 12.253 15.6017 12.6613C15.5439 12.7729 15.4885 12.9916 15.4463 13.1836L15.3705 13.5462C15.2839 14.1293 15.2265 15.0237 15.2265 16.0048ZM11.0053 14.9882C10.4518 14.9882 10.0031 15.4413 10.0031 16.0001C10.0031 16.5589 10.4518 17.012 11.0053 17.012L13.4714 16.7939C13.9056 16.7939 14.2576 16.4392 14.2576 16.0001C14.2576 15.5617 13.9056 15.2063 13.4714 15.2063L11.0053 14.9882Z"
+                           fill="#808191"/>
+                     </svg>
+                     <span class="font-normal text-sm group-hover:text-[#FF7551] dark:group-hover:text-white">Trending</span>
+                  </a>
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
+                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <rect class=" group-hover:text-[#FF7551] group-hover:opacity-90 " opacity="0.1" x="-0.000610352"
-                              y="0.000274658" width="32" height="32" rx="12" fill="currentColor"/>
+                           y="0.000274658" width="32" height="32" rx="12" fill="currentColor"/>
                         <path class=" group-hover:fill-white group-hover:opacity-90 "
-                              d="M15.487 12.8605V10.1878C15.487 9.90364 15.7136 9.66682 16.0003 9.66682C16.257 9.66682 16.4744 9.86582 16.5089 10.1179L16.5136 10.1878V12.8605L19.7002 12.8607C21.2869 12.8607 22.5905 14.16 22.6636 15.7804L22.6669 15.9242V19.2838C22.6669 20.9155 21.4087 22.255 19.8456 22.3302L19.7069 22.3335L12.2936 22.3335C10.7069 22.3335 9.40962 21.0407 9.33678 19.4143L9.33356 19.27L9.33356 15.9173C9.33356 14.2856 10.5855 12.9396 12.1482 12.8641L12.2869 12.8607L15.4869 12.8607V17.129L14.4202 16.0275C14.2202 15.821 13.8936 15.821 13.6936 16.0275C13.5936 16.1307 13.5469 16.2684 13.5469 16.4061C13.5469 16.5108 13.5768 16.6198 13.6399 16.7121L13.6936 16.7779L15.6336 18.7881C15.7269 18.8913 15.8602 18.9464 16.0002 18.9464C16.1113 18.9464 16.2224 18.9082 16.3104 18.8357L16.3602 18.7881L18.3002 16.7779C18.5002 16.5713 18.5002 16.234 18.3002 16.0275C18.1184 15.8397 17.8319 15.8227 17.6311 15.9763L17.5736 16.0275L16.5136 17.129V12.8607L15.487 12.8605Z"
-                              fill="currentColor"/>
-                    </svg>
-
-
-                    <span class="font-normal text-base group-hover:text-[#FF7551]  dark:group-hover:text-white">Streaming</span>
-                </a>
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
-
-                    <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="34" height="35" viewBox="0 0 34 35"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                           d="M15.487 12.8605V10.1878C15.487 9.90364 15.7136 9.66682 16.0003 9.66682C16.257 9.66682 16.4744 9.86582 16.5089 10.1179L16.5136 10.1878V12.8605L19.7002 12.8607C21.2869 12.8607 22.5905 14.16 22.6636 15.7804L22.6669 15.9242V19.2838C22.6669 20.9155 21.4087 22.255 19.8456 22.3302L19.7069 22.3335L12.2936 22.3335C10.7069 22.3335 9.40962 21.0407 9.33678 19.4143L9.33356 19.27L9.33356 15.9173C9.33356 14.2856 10.5855 12.9396 12.1482 12.8641L12.2869 12.8607L15.4869 12.8607V17.129L14.4202 16.0275C14.2202 15.821 13.8936 15.821 13.6936 16.0275C13.5936 16.1307 13.5469 16.2684 13.5469 16.4061C13.5469 16.5108 13.5768 16.6198 13.6399 16.7121L13.6936 16.7779L15.6336 18.7881C15.7269 18.8913 15.8602 18.9464 16.0002 18.9464C16.1113 18.9464 16.2224 18.9082 16.3104 18.8357L16.3602 18.7881L18.3002 16.7779C18.5002 16.5713 18.5002 16.234 18.3002 16.0275C18.1184 15.8397 17.8319 15.8227 17.6311 15.9763L17.5736 16.0275L16.5136 17.129V12.8607L15.487 12.8605Z"
+                           fill="currentColor"/>
+                     </svg>
+                     <span class="font-normal text-sm group-hover:text-[#FF7551]  dark:group-hover:text-white">Streaming</span>
+                  </a>
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
+                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="34" height="35" viewBox="0 0 34 35"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <g class=" group-hover:text-[#FF7551] group-hover:opacity-90 " opacity="0.1"
                            filter="url(#filter0_d_1_221)">
-                            <rect x="0.99939" y="0.000305176" width="32" height="32" rx="12" fill="currentColor"/>
+                           <rect x="0.99939" y="0.000305176" width="32" height="32" rx="12" fill="currentColor"/>
                         </g>
                         <path class=" group-hover:fill-white group-hover:opacity-90 " fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M17.1055 19.094L18.9998 17.1807C19.1913 16.9807 19.1913 16.6674 18.9932 16.474C18.8018 16.2807 18.4916 16.2807 18.3002 16.474L17.2507 17.5407V14.3274C17.2507 14.0474 17.0329 13.8274 16.7622 13.8274C16.4916 13.8274 16.2672 14.0474 16.2672 14.3274V17.5407L15.2177 16.474C15.0263 16.2807 14.716 16.2807 14.5246 16.474C14.3332 16.6674 14.3332 16.9807 14.5246 17.1807L16.4124 19.094C16.4586 19.1407 16.5114 19.174 16.5708 19.2007C16.6302 19.2274 16.6962 19.2407 16.7622 19.2407C16.8282 19.2407 16.8876 19.2274 16.947 19.2007C17.0064 19.174 17.0593 19.1407 17.1055 19.094ZM21.8885 14.0178C22.0437 14.016 22.2126 14.014 22.3661 14.014C22.5377 14.014 22.6698 14.1474 22.6698 14.314V19.674C22.6698 21.3274 21.3364 22.6674 19.6995 22.6674L14.4519 22.6674C12.7292 22.6674 11.3364 21.2607 11.3364 19.5274V12.3407C11.3364 10.6874 12.6632 9.33403 14.3133 9.33403H17.8381C18.0031 9.33403 18.1417 9.47403 18.1417 9.6407V11.7874C18.1417 13.0074 19.1318 14.0074 20.3463 14.014C20.6253 14.014 20.8749 14.0161 21.0928 14.018C21.2616 14.0194 21.4114 14.0207 21.541 14.0207C21.635 14.0207 21.7568 14.0193 21.8885 14.0178ZM22.0728 13.0448C21.5309 13.0468 20.8913 13.0448 20.4313 13.0401C19.7012 13.0401 19.0999 12.4328 19.0999 11.6954V9.9381C19.0999 9.65077 19.4451 9.5081 19.6418 9.71543C20.1503 10.249 20.9289 11.0668 21.5868 11.7578C21.8529 12.0373 22.0992 12.296 22.2999 12.5068C22.4926 12.7088 22.3514 13.0441 22.0728 13.0448Z"
-                              fill="currentColor"/>
+                           clip-rule="evenodd"
+                           d="M17.1055 19.094L18.9998 17.1807C19.1913 16.9807 19.1913 16.6674 18.9932 16.474C18.8018 16.2807 18.4916 16.2807 18.3002 16.474L17.2507 17.5407V14.3274C17.2507 14.0474 17.0329 13.8274 16.7622 13.8274C16.4916 13.8274 16.2672 14.0474 16.2672 14.3274V17.5407L15.2177 16.474C15.0263 16.2807 14.716 16.2807 14.5246 16.474C14.3332 16.6674 14.3332 16.9807 14.5246 17.1807L16.4124 19.094C16.4586 19.1407 16.5114 19.174 16.5708 19.2007C16.6302 19.2274 16.6962 19.2407 16.7622 19.2407C16.8282 19.2407 16.8876 19.2274 16.947 19.2007C17.0064 19.174 17.0593 19.1407 17.1055 19.094ZM21.8885 14.0178C22.0437 14.016 22.2126 14.014 22.3661 14.014C22.5377 14.014 22.6698 14.1474 22.6698 14.314V19.674C22.6698 21.3274 21.3364 22.6674 19.6995 22.6674L14.4519 22.6674C12.7292 22.6674 11.3364 21.2607 11.3364 19.5274V12.3407C11.3364 10.6874 12.6632 9.33403 14.3133 9.33403H17.8381C18.0031 9.33403 18.1417 9.47403 18.1417 9.6407V11.7874C18.1417 13.0074 19.1318 14.0074 20.3463 14.014C20.6253 14.014 20.8749 14.0161 21.0928 14.018C21.2616 14.0194 21.4114 14.0207 21.541 14.0207C21.635 14.0207 21.7568 14.0193 21.8885 14.0178ZM22.0728 13.0448C21.5309 13.0468 20.8913 13.0448 20.4313 13.0401C19.7012 13.0401 19.0999 12.4328 19.0999 11.6954V9.9381C19.0999 9.65077 19.4451 9.5081 19.6418 9.71543C20.1503 10.249 20.9289 11.0668 21.5868 11.7578C21.8529 12.0373 22.0992 12.296 22.2999 12.5068C22.4926 12.7088 22.3514 13.0441 22.0728 13.0448Z"
+                           fill="currentColor"/>
                         <defs>
-                            <filter id="filter0_d_1_221" x="-0.000610292" y="0.000305176" width="34" height="35"
-                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                <feOffset dy="2"/>
-                                <feGaussianBlur stdDeviation="0.5"/>
-                                <feColorMatrix type="matrix"
-                                               values="0 0 0 0 0.25098 0 0 0 0 0.282353 0 0 0 0 0.321569 0 0 0 0.05 0"/>
-                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_221"/>
-                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_221"
-                                         result="shape"/>
-                            </filter>
+                           <filter id="filter0_d_1_221" x="-0.000610292" y="0.000305176" width="34" height="35"
+                              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                              <feColorMatrix in="SourceAlpha" type="matrix"
+                                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                              <feOffset dy="2"/>
+                              <feGaussianBlur stdDeviation="0.5"/>
+                              <feColorMatrix type="matrix"
+                                 values="0 0 0 0 0.25098 0 0 0 0 0.282353 0 0 0 0 0.321569 0 0 0 0.05 0"/>
+                              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_221"/>
+                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_221"
+                                 result="shape"/>
+                           </filter>
                         </defs>
-                    </svg>
-
-                    <span class="font-normal text-base group-hover:text-[#FF7551]  dark:group-hover:text-white">Playlist</span>
-                </a>
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
-
-                    <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                     </svg>
+                     <span class="font-normal text-sm group-hover:text-[#FF7551]  dark:group-hover:text-white">Playlist</span>
+                  </a>
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
+                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <rect class=" group-hover:text-[#FF7551] group-hover:opacity-90 " opacity="0.1" x="-0.000610352"
-                              y="0.000366211" width="32" height="32" rx="12" fill="currentColor"/>
+                           y="0.000366211" width="32" height="32" rx="12" fill="currentColor"/>
                         <g class=" group-hover:text-[#FF7551] group-hover:opacity-90 " filter="url(#filter0_dd_1_209)">
-                            <path class=" group-hover:fill-white group-hover:opacity-90 " fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M19.8461 13.5877L22.6669 13.5877C22.6669 11.3229 21.3099 9.9998 19.0106 9.9998L12.9899 9.9998C10.6906 9.9998 9.33356 11.3229 9.33356 13.5588V18.4408C9.33356 20.6767 10.6906 21.9998 12.9899 21.9998L19.0106 21.9998C21.3099 21.9998 22.6669 20.6767 22.6669 18.4408V18.2328H19.8461C18.537 18.2328 17.4758 17.1981 17.4758 15.9218C17.4758 14.6455 18.537 13.6108 19.8461 13.6108V13.5877ZM19.8449 14.5814L22.1679 14.5814C22.4428 14.5814 22.6656 14.7987 22.6656 15.0668V16.7538C22.6624 17.0205 22.4414 17.236 22.1679 17.2391H19.8982C19.2355 17.2478 18.656 16.8054 18.5056 16.176C18.4304 15.7854 18.536 15.3822 18.7944 15.0746C19.0527 14.7671 19.4372 14.5865 19.8449 14.5814ZM19.9486 16.3552H20.1679C20.4493 16.3552 20.6775 16.1328 20.6775 15.8584C20.6775 15.5839 20.4493 15.3615 20.1679 15.3615H19.9486C19.814 15.3599 19.6844 15.411 19.5886 15.5033C19.4929 15.5955 19.439 15.7213 19.439 15.8526C19.439 16.1279 19.6662 16.3521 19.9486 16.3552ZM12.4931 13.588L16.256 13.588C16.5375 13.588 16.7657 13.3656 16.7657 13.0912C16.7657 12.8168 16.5375 12.5943 16.256 12.5943L12.4931 12.5943C12.2139 12.5943 11.9867 12.8132 11.9834 13.0854C11.9834 13.3608 12.2107 13.5849 12.4931 13.588Z"
-                                  fill="currentColor"/>
+                           <path class=" group-hover:fill-white group-hover:opacity-90 " fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M19.8461 13.5877L22.6669 13.5877C22.6669 11.3229 21.3099 9.9998 19.0106 9.9998L12.9899 9.9998C10.6906 9.9998 9.33356 11.3229 9.33356 13.5588V18.4408C9.33356 20.6767 10.6906 21.9998 12.9899 21.9998L19.0106 21.9998C21.3099 21.9998 22.6669 20.6767 22.6669 18.4408V18.2328H19.8461C18.537 18.2328 17.4758 17.1981 17.4758 15.9218C17.4758 14.6455 18.537 13.6108 19.8461 13.6108V13.5877ZM19.8449 14.5814L22.1679 14.5814C22.4428 14.5814 22.6656 14.7987 22.6656 15.0668V16.7538C22.6624 17.0205 22.4414 17.236 22.1679 17.2391H19.8982C19.2355 17.2478 18.656 16.8054 18.5056 16.176C18.4304 15.7854 18.536 15.3822 18.7944 15.0746C19.0527 14.7671 19.4372 14.5865 19.8449 14.5814ZM19.9486 16.3552H20.1679C20.4493 16.3552 20.6775 16.1328 20.6775 15.8584C20.6775 15.5839 20.4493 15.3615 20.1679 15.3615H19.9486C19.814 15.3599 19.6844 15.411 19.5886 15.5033C19.4929 15.5955 19.439 15.7213 19.439 15.8526C19.439 16.1279 19.6662 16.3521 19.9486 16.3552ZM12.4931 13.588L16.256 13.588C16.5375 13.588 16.7657 13.3656 16.7657 13.0912C16.7657 12.8168 16.5375 12.5943 16.256 12.5943L12.4931 12.5943C12.2139 12.5943 11.9867 12.8132 11.9834 13.0854C11.9834 13.3608 12.2107 13.5849 12.4931 13.588Z"
+                              fill="currentColor"/>
                         </g>
                         <defs>
-                            <filter id="filter0_dd_1_209" x="4.00311" y="7.99996" width="24" height="24"
-                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                <feOffset dy="4"/>
-                                <feGaussianBlur stdDeviation="2"/>
-                                <feComposite in2="hardAlpha" operator="out"/>
-                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_209"/>
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                <feOffset dy="4"/>
-                                <feGaussianBlur stdDeviation="2"/>
-                                <feComposite in2="hardAlpha" operator="out"/>
-                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                                <feBlend mode="normal" in2="effect1_dropShadow_1_209"
-                                         result="effect2_dropShadow_1_209"/>
-                                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_1_209"
-                                         result="shape"/>
-                            </filter>
+                           <filter id="filter0_dd_1_209" x="4.00311" y="7.99996" width="24" height="24"
+                              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                              <feColorMatrix in="SourceAlpha" type="matrix"
+                                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                              <feOffset dy="4"/>
+                              <feGaussianBlur stdDeviation="2"/>
+                              <feComposite in2="hardAlpha" operator="out"/>
+                              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_209"/>
+                              <feColorMatrix in="SourceAlpha" type="matrix"
+                                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                              <feOffset dy="4"/>
+                              <feGaussianBlur stdDeviation="2"/>
+                              <feComposite in2="hardAlpha" operator="out"/>
+                              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                              <feBlend mode="normal" in2="effect1_dropShadow_1_209"
+                                 result="effect2_dropShadow_1_209"/>
+                              <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_1_209"
+                                 result="shape"/>
+                           </filter>
                         </defs>
-                    </svg>
-
-
-                    <span class="font-normal text-base group-hover:text-[#FF7551]  dark:group-hover:text-white">Bookmark</span>
+                     </svg>
+                     <span class="font-normal text-sm group-hover:text-[#FF7551]  dark:group-hover:text-white">Bookmark</span>
+                  </a>
+               </li>
+               
+               <li class="flex flex-col py-12 overflow-auto space-y-6 border-b-2 border-[#34373C]">
+                <a >
+                    <span class="text-[11px] leading-[11px] text-[#808191] font-semibold tracking-[1.5px] ">
+                        CATEGORY
+                    </span>
                 </a>
-            </li>
-            <li class="flex flex-col py-6 overflow-auto space-y-6">
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
-
-                    <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
+                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <rect class=" group-hover:text-[#FF7551] group-hover:opacity-90 " opacity="0.1" x="-0.000610352"
-                              width="32" height="32" rx="12" fill="currentColor"/>
+                           width="32" height="32" rx="12" fill="currentColor"/>
                         <path class=" group-hover:fill-white group-hover:opacity-90 "
-                              d="M14.093 21.8495V19.811C14.093 19.2906 14.5179 18.8688 15.0421 18.8688L16.9582 18.8688C17.2099 18.8688 17.4513 18.968 17.6293 19.1447C17.8073 19.3214 17.9073 19.5611 17.9073 19.811V21.8495C17.9057 22.0658 17.9912 22.2738 18.1447 22.4274C18.2983 22.5809 18.5072 22.6672 18.7251 22.6672H20.0324C20.6429 22.6688 21.229 22.4291 21.6612 22.0011C22.0935 21.5731 22.3365 20.9919 22.3365 20.3858V14.5785C22.3365 14.0889 22.1178 13.6245 21.7395 13.3104L17.2925 9.78448C16.5189 9.16628 15.4105 9.18624 14.6601 9.83189L10.3145 13.3104C9.91829 13.6152 9.6815 14.081 9.6698 14.5785V20.3799C9.6698 21.6431 10.7014 22.6672 11.9739 22.6672H13.2513C13.704 22.6672 14.0718 22.3047 14.0751 21.8554L14.093 21.8495Z"
-                              fill="currentColor"/>
-                    </svg>
-
-
-                    <span class="font-normal text-base  group-hover:text-[#FF7551]   dark:group-hover:text-white">Live Stream</span>
-                </a>
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
-
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 32 32"
-                         fill="currentColor"
-                         width="32" height="32"
-                         class=" text-[#808191] group-hover:text-[#FF7551]"
-                    >
+                           d="M14.093 21.8495V19.811C14.093 19.2906 14.5179 18.8688 15.0421 18.8688L16.9582 18.8688C17.2099 18.8688 17.4513 18.968 17.6293 19.1447C17.8073 19.3214 17.9073 19.5611 17.9073 19.811V21.8495C17.9057 22.0658 17.9912 22.2738 18.1447 22.4274C18.2983 22.5809 18.5072 22.6672 18.7251 22.6672H20.0324C20.6429 22.6688 21.229 22.4291 21.6612 22.0011C22.0935 21.5731 22.3365 20.9919 22.3365 20.3858V14.5785C22.3365 14.0889 22.1178 13.6245 21.7395 13.3104L17.2925 9.78448C16.5189 9.16628 15.4105 9.18624 14.6601 9.83189L10.3145 13.3104C9.91829 13.6152 9.6815 14.081 9.6698 14.5785V20.3799C9.6698 21.6431 10.7014 22.6672 11.9739 22.6672H13.2513C13.704 22.6672 14.0718 22.3047 14.0751 21.8554L14.093 21.8495Z"
+                           fill="currentColor"/>
+                     </svg>
+                     <span class="font-normal text-sm  group-hover:text-[#FF7551]   dark:group-hover:text-white">Live Stream</span>
+                  </a>
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
+                     <svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 32 32"
+                        fill="currentColor"
+                        width="32" height="32"
+                        class=" text-[#808191] group-hover:text-[#FF7551]"
+                        >
                         <rect
-                                class=" group-hover:text-[#FF7551] group-hover:opacity-90 "
-                                opacity="0.1" x="-0.000610352" y="0.000244141" width="32" height="32" rx="12"
-                                fill="currentColor"/>
+                           class=" group-hover:text-[#FF7551] group-hover:opacity-90 "
+                           opacity="0.1" x="-0.000610352" y="0.000244141" width="32" height="32" rx="12"
+                           fill="currentColor"/>
                         <path
-                                class=" group-hover:fill-white group-hover:opacity-90 "
-                                fill-rule="evenodd" clip-rule="evenodd"
-                                d="M15.2265 16.0048L15.2275 16.2409C15.2356 17.1772 15.292 18.0126 15.3894 18.542C15.3894 18.5515 15.4956 19.0766 15.5632 19.2514C15.6694 19.504 15.8614 19.7184 16.1021 19.8543C16.2948 19.9512 16.497 20.0004 16.7086 20.0004C16.875 19.9927 17.1494 19.909 17.3452 19.8388L17.5079 19.7764C18.5857 19.3483 20.646 17.9494 21.4351 17.0938L21.4933 17.034L21.7529 16.7538C21.9166 16.5394 22.0031 16.2772 22.0031 15.9953C22.0031 15.7426 21.926 15.49 21.7718 15.2859C21.7257 15.2197 21.6513 15.1349 21.5852 15.0632L21.3324 14.7987C20.4628 13.9175 18.5799 12.6816 17.6039 12.2721C17.6039 12.2633 16.9974 12.0099 16.7086 12.0004H16.6701C16.2272 12.0004 15.8134 12.253 15.6017 12.6613C15.5439 12.7729 15.4885 12.9916 15.4463 13.1836L15.3705 13.5462C15.2839 14.1293 15.2265 15.0237 15.2265 16.0048ZM11.0053 14.9882C10.4518 14.9882 10.0031 15.4413 10.0031 16.0001C10.0031 16.5589 10.4518 17.012 11.0053 17.012L13.4714 16.7939C13.9056 16.7939 14.2576 16.4392 14.2576 16.0001C14.2576 15.5617 13.9056 15.2063 13.4714 15.2063L11.0053 14.9882Z"
-                                fill="#808191"/>
-                    </svg>
-
-                    <span class="font-normal text-base  group-hover:text-[#FF7551]  dark:group-hover:text-white">Tutorial</span>
-                </a>
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md py-1 text-black dark:text-[#808191]">
-
-                    <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                           class=" group-hover:fill-white group-hover:opacity-90 "
+                           fill-rule="evenodd" clip-rule="evenodd"
+                           d="M15.2265 16.0048L15.2275 16.2409C15.2356 17.1772 15.292 18.0126 15.3894 18.542C15.3894 18.5515 15.4956 19.0766 15.5632 19.2514C15.6694 19.504 15.8614 19.7184 16.1021 19.8543C16.2948 19.9512 16.497 20.0004 16.7086 20.0004C16.875 19.9927 17.1494 19.909 17.3452 19.8388L17.5079 19.7764C18.5857 19.3483 20.646 17.9494 21.4351 17.0938L21.4933 17.034L21.7529 16.7538C21.9166 16.5394 22.0031 16.2772 22.0031 15.9953C22.0031 15.7426 21.926 15.49 21.7718 15.2859C21.7257 15.2197 21.6513 15.1349 21.5852 15.0632L21.3324 14.7987C20.4628 13.9175 18.5799 12.6816 17.6039 12.2721C17.6039 12.2633 16.9974 12.0099 16.7086 12.0004H16.6701C16.2272 12.0004 15.8134 12.253 15.6017 12.6613C15.5439 12.7729 15.4885 12.9916 15.4463 13.1836L15.3705 13.5462C15.2839 14.1293 15.2265 15.0237 15.2265 16.0048ZM11.0053 14.9882C10.4518 14.9882 10.0031 15.4413 10.0031 16.0001C10.0031 16.5589 10.4518 17.012 11.0053 17.012L13.4714 16.7939C13.9056 16.7939 14.2576 16.4392 14.2576 16.0001C14.2576 15.5617 13.9056 15.2063 13.4714 15.2063L11.0053 14.9882Z"
+                           fill="#808191"/>
+                     </svg>
+                     <span class="font-normal text-sm  group-hover:text-[#FF7551]  dark:group-hover:text-white">Tutorial</span>
+                  </a>
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md py-1 text-black dark:text-[#808191]">
+                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="32" height="32" viewBox="0 0 32 32"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <rect class=" group-hover:text-[#FF7551] group-hover:opacity-90 " opacity="0.1" x="-0.000610352"
-                              y="0.000274658" width="32" height="32" rx="12" fill="currentColor"/>
+                           y="0.000274658" width="32" height="32" rx="12" fill="currentColor"/>
                         <path class=" group-hover:fill-white group-hover:opacity-90 "
-                              d="M15.487 12.8605V10.1878C15.487 9.90364 15.7136 9.66682 16.0003 9.66682C16.257 9.66682 16.4744 9.86582 16.5089 10.1179L16.5136 10.1878V12.8605L19.7002 12.8607C21.2869 12.8607 22.5905 14.16 22.6636 15.7804L22.6669 15.9242V19.2838C22.6669 20.9155 21.4087 22.255 19.8456 22.3302L19.7069 22.3335L12.2936 22.3335C10.7069 22.3335 9.40962 21.0407 9.33678 19.4143L9.33356 19.27L9.33356 15.9173C9.33356 14.2856 10.5855 12.9396 12.1482 12.8641L12.2869 12.8607L15.4869 12.8607V17.129L14.4202 16.0275C14.2202 15.821 13.8936 15.821 13.6936 16.0275C13.5936 16.1307 13.5469 16.2684 13.5469 16.4061C13.5469 16.5108 13.5768 16.6198 13.6399 16.7121L13.6936 16.7779L15.6336 18.7881C15.7269 18.8913 15.8602 18.9464 16.0002 18.9464C16.1113 18.9464 16.2224 18.9082 16.3104 18.8357L16.3602 18.7881L18.3002 16.7779C18.5002 16.5713 18.5002 16.234 18.3002 16.0275C18.1184 15.8397 17.8319 15.8227 17.6311 15.9763L17.5736 16.0275L16.5136 17.129V12.8607L15.487 12.8605Z"
-                              fill="currentColor"/>
-                    </svg>
-
-                    <span class=" group-hover:text-[#FF7551] font-normal text-base  font-normal dark:group-hover:text-white">Competition</span>
-                </a>
-                <a href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
-                    <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="34" height="35" viewBox="0 0 34 35"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                           d="M15.487 12.8605V10.1878C15.487 9.90364 15.7136 9.66682 16.0003 9.66682C16.257 9.66682 16.4744 9.86582 16.5089 10.1179L16.5136 10.1878V12.8605L19.7002 12.8607C21.2869 12.8607 22.5905 14.16 22.6636 15.7804L22.6669 15.9242V19.2838C22.6669 20.9155 21.4087 22.255 19.8456 22.3302L19.7069 22.3335L12.2936 22.3335C10.7069 22.3335 9.40962 21.0407 9.33678 19.4143L9.33356 19.27L9.33356 15.9173C9.33356 14.2856 10.5855 12.9396 12.1482 12.8641L12.2869 12.8607L15.4869 12.8607V17.129L14.4202 16.0275C14.2202 15.821 13.8936 15.821 13.6936 16.0275C13.5936 16.1307 13.5469 16.2684 13.5469 16.4061C13.5469 16.5108 13.5768 16.6198 13.6399 16.7121L13.6936 16.7779L15.6336 18.7881C15.7269 18.8913 15.8602 18.9464 16.0002 18.9464C16.1113 18.9464 16.2224 18.9082 16.3104 18.8357L16.3602 18.7881L18.3002 16.7779C18.5002 16.5713 18.5002 16.234 18.3002 16.0275C18.1184 15.8397 17.8319 15.8227 17.6311 15.9763L17.5736 16.0275L16.5136 17.129V12.8607L15.487 12.8605Z"
+                           fill="currentColor"/>
+                     </svg>
+                     <span class=" group-hover:text-[#FF7551]  text-sm  font-normal dark:group-hover:text-white">Competition</span>
+                  </a>
+                  <a href="#"
+                     class="group flex items-center space-x-4 rounded-md  py-1 text-black dark:text-[#808191]">
+                     <svg class=" text-[#808191] group-hover:text-[#FF7551]" width="34" height="35" viewBox="0 0 34 35"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <g class=" group-hover:text-[#FF7551] group-hover:opacity-90 " opacity="0.1"
                            filter="url(#filter0_d_1_221)">
-                            <rect x="0.99939" y="0.000305176" width="32" height="32" rx="12" fill="currentColor"/>
+                           <rect x="0.99939" y="0.000305176" width="32" height="32" rx="12" fill="currentColor"/>
                         </g>
                         <path class=" group-hover:fill-white group-hover:opacity-90 " fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M17.1055 19.094L18.9998 17.1807C19.1913 16.9807 19.1913 16.6674 18.9932 16.474C18.8018 16.2807 18.4916 16.2807 18.3002 16.474L17.2507 17.5407V14.3274C17.2507 14.0474 17.0329 13.8274 16.7622 13.8274C16.4916 13.8274 16.2672 14.0474 16.2672 14.3274V17.5407L15.2177 16.474C15.0263 16.2807 14.716 16.2807 14.5246 16.474C14.3332 16.6674 14.3332 16.9807 14.5246 17.1807L16.4124 19.094C16.4586 19.1407 16.5114 19.174 16.5708 19.2007C16.6302 19.2274 16.6962 19.2407 16.7622 19.2407C16.8282 19.2407 16.8876 19.2274 16.947 19.2007C17.0064 19.174 17.0593 19.1407 17.1055 19.094ZM21.8885 14.0178C22.0437 14.016 22.2126 14.014 22.3661 14.014C22.5377 14.014 22.6698 14.1474 22.6698 14.314V19.674C22.6698 21.3274 21.3364 22.6674 19.6995 22.6674L14.4519 22.6674C12.7292 22.6674 11.3364 21.2607 11.3364 19.5274V12.3407C11.3364 10.6874 12.6632 9.33403 14.3133 9.33403H17.8381C18.0031 9.33403 18.1417 9.47403 18.1417 9.6407V11.7874C18.1417 13.0074 19.1318 14.0074 20.3463 14.014C20.6253 14.014 20.8749 14.0161 21.0928 14.018C21.2616 14.0194 21.4114 14.0207 21.541 14.0207C21.635 14.0207 21.7568 14.0193 21.8885 14.0178ZM22.0728 13.0448C21.5309 13.0468 20.8913 13.0448 20.4313 13.0401C19.7012 13.0401 19.0999 12.4328 19.0999 11.6954V9.9381C19.0999 9.65077 19.4451 9.5081 19.6418 9.71543C20.1503 10.249 20.9289 11.0668 21.5868 11.7578C21.8529 12.0373 22.0992 12.296 22.2999 12.5068C22.4926 12.7088 22.3514 13.0441 22.0728 13.0448Z"
-                              fill="currentColor"/>
+                           clip-rule="evenodd"
+                           d="M17.1055 19.094L18.9998 17.1807C19.1913 16.9807 19.1913 16.6674 18.9932 16.474C18.8018 16.2807 18.4916 16.2807 18.3002 16.474L17.2507 17.5407V14.3274C17.2507 14.0474 17.0329 13.8274 16.7622 13.8274C16.4916 13.8274 16.2672 14.0474 16.2672 14.3274V17.5407L15.2177 16.474C15.0263 16.2807 14.716 16.2807 14.5246 16.474C14.3332 16.6674 14.3332 16.9807 14.5246 17.1807L16.4124 19.094C16.4586 19.1407 16.5114 19.174 16.5708 19.2007C16.6302 19.2274 16.6962 19.2407 16.7622 19.2407C16.8282 19.2407 16.8876 19.2274 16.947 19.2007C17.0064 19.174 17.0593 19.1407 17.1055 19.094ZM21.8885 14.0178C22.0437 14.016 22.2126 14.014 22.3661 14.014C22.5377 14.014 22.6698 14.1474 22.6698 14.314V19.674C22.6698 21.3274 21.3364 22.6674 19.6995 22.6674L14.4519 22.6674C12.7292 22.6674 11.3364 21.2607 11.3364 19.5274V12.3407C11.3364 10.6874 12.6632 9.33403 14.3133 9.33403H17.8381C18.0031 9.33403 18.1417 9.47403 18.1417 9.6407V11.7874C18.1417 13.0074 19.1318 14.0074 20.3463 14.014C20.6253 14.014 20.8749 14.0161 21.0928 14.018C21.2616 14.0194 21.4114 14.0207 21.541 14.0207C21.635 14.0207 21.7568 14.0193 21.8885 14.0178ZM22.0728 13.0448C21.5309 13.0468 20.8913 13.0448 20.4313 13.0401C19.7012 13.0401 19.0999 12.4328 19.0999 11.6954V9.9381C19.0999 9.65077 19.4451 9.5081 19.6418 9.71543C20.1503 10.249 20.9289 11.0668 21.5868 11.7578C21.8529 12.0373 22.0992 12.296 22.2999 12.5068C22.4926 12.7088 22.3514 13.0441 22.0728 13.0448Z"
+                           fill="currentColor"/>
                         <defs>
-                            <filter id="filter0_d_1_221" x="-0.000610292" y="0.000305176" width="34" height="35"
-                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                <feOffset dy="2"/>
-                                <feGaussianBlur stdDeviation="0.5"/>
-                                <feColorMatrix type="matrix"
-                                               values="0 0 0 0 0.25098 0 0 0 0 0.282353 0 0 0 0 0.321569 0 0 0 0.05 0"/>
-                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_221"/>
-                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_221"
-                                         result="shape"/>
-                            </filter>
+                           <filter id="filter0_d_1_221" x="-0.000610292" y="0.000305176" width="34" height="35"
+                              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                              <feColorMatrix in="SourceAlpha" type="matrix"
+                                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                              <feOffset dy="2"/>
+                              <feGaussianBlur stdDeviation="0.5"/>
+                              <feColorMatrix type="matrix"
+                                 values="0 0 0 0 0.25098 0 0 0 0 0.282353 0 0 0 0 0.321569 0 0 0 0.05 0"/>
+                              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_221"/>
+                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_221"
+                                 result="shape"/>
+                           </filter>
                         </defs>
-                    </svg>
-
-                    <span class=" group-hover:text-[#FF7551] font-normal text-base  font-normal dark:group-hover:text-white">Community</span>
-                </a>
-            </li>
-            <li>
-                <a onclick="html()" href="#"
-                   class="group flex items-center space-x-4 rounded-md  py-1 text-gray-600 dark:text-gray-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                         class="h-6 w-6 text-gray-300 group-hover:text-emerald-500">
-                        <path fill-rule="evenodd"
-                              d="M12 5.25c1.213 0 2.415.046 3.605.135a3.256 3.256 0 013.01 3.01c.044.583.077 1.17.1 1.759L17.03 8.47a.75.75 0 10-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 00-1.06-1.06l-1.752 1.751c-.023-.65-.06-1.296-.108-1.939a4.756 4.756 0 00-4.392-4.392 49.422 49.422 0 00-7.436 0A4.756 4.756 0 003.89 8.282c-.017.224-.033.447-.046.672a.75.75 0 101.497.092c.013-.217.028-.434.044-.651a3.256 3.256 0 013.01-3.01c1.19-.09 2.392-.135 3.605-.135zm-6.97 6.22a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.752-1.751c.023.65.06 1.296.108 1.939a4.756 4.756 0 004.392 4.392 49.413 49.413 0 007.436 0 4.756 4.756 0 004.392-4.392c.017-.223.032-.447.046-.672a.75.75 0 00-1.497-.092c-.013.217-.028.434-.044.651a3.256 3.256 0 01-3.01 3.01 47.953 47.953 0 01-7.21 0 3.256 3.256 0 01-3.01-3.01 47.759 47.759 0 01-.1-1.759L6.97 15.53a.75.75 0 001.06-1.06l-3-3z"
-                              clip-rule="evenodd"/>
-                    </svg>
-
-                    <span class="font-bold group-hover:text-emerald-500 text-sm font-normal dark:group-hover:text-emerald-500">Dark Mode</span>
-                </a>
-            </li>
-
-        </ul>
-    </div>
-
-
-</aside>
-
-
-<div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-    <div class="sticky lg:pt-7 lg:pb-10  top-0 z-10 border-b bg-white dark:border-[#1F1D2B] dark:bg-[#1F1D2B]">
-        <div class="flex items-center justify-between space-x-4  2xl:container">
-            <!--search bar -->
-            <div hidden class="md:block w-[625px]">
-                <div class="relative flex items-center text-gray-400 focus-within:text-emerald-400">
-
-                    <input type="search" name="leadingIcon" id="leadingIcon" placeholder="Search here"
-                           class="w-full placeholder-[#808191] rounded-xl border border-gray-300 py-2.5 pl-4 pr-4 text-sm text-black dark:text-black outline-none  focus:border-emerald-300 dark:border-gray-700 dark:focus:opacity-100 dark:opacity-10 dark:bg-white"/>
-<!--                    <span class="absolute left-4 flex h-6 items-center border-r border-gray-300 pr-3 dark:border-gray-700">-->
-<!--                <svg xmlns="http://ww50w3.org/2000/svg" class="w-4 fill-current" viewBox="0 0 35.997 36.004">-->
-<!--                  <path id="Icon_awesome-search" data-name="search"-->
-<!--                        d="M35.508,31.127l-7.01-7.01a1.686,1.686,0,0,0-1.2-.492H26.156a14.618,14.618,0,1,0-2.531,2.531V27.3a1.686,1.686,0,0,0,.492,1.2l7.01,7.01a1.681,1.681,0,0,0,2.384,0l1.99-1.99a1.7,1.7,0,0,0,.007-2.391Zm-20.883-7.5a9,9,0,1,1,9-9A8.995,8.995,0,0,1,14.625,23.625Z"></path>-->
-<!--                </svg>-->
-<!--              </span>-->
-                </div>
-            </div>
-            <!--/search bar -->
-            <button class="-mr-2 h-16 w-12 border-r dark:border-gray-700 dark:text-gray-300 lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="my-auto h-6 w-6" fill="none" viewBox="0 0 24 24"
+                     </svg>
+                     <span class=" group-hover:text-[#FF7551] font-normal text-sm  dark:group-hover:text-white">Community</span>
+                  </a>
+               </li>
+               
+               <li>
+                <div  class="flex group items-center  justify-center w-full pt-12  text-gray-600 dark:text-gray-300">
+  
+                    <label  for="toggleB" class="flex items-center space-x-4 cursor-pointer w-full  ">
+                     
+                      <div class="relative ">
+                        
+                        <input onclick="html()" type="checkbox" id="toggleB" class="sr-only">
+                        
+                        <div class="block bg-[#6C5ECF] w-14 h-8 rounded-full"></div>
+                        
+                        <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                      </div>
+                     
+                      <div class="relative whitespace-nowrap">
+                        <p class=" group-hover:text-black text-sm font-normal  dark:group-hover:text-white ">Dark Mode</p>
+                 
+                      </div>
+                       
+                    </label>
+                  
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </aside>
+      <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+         <div class="sticky lg:pt-7 lg:pb-10  top-0 z-10 border-b xl:pr-7 px-2 bg-white dark:border-[#1F1D2B] dark:bg-[#1F1D2B]">
+            <div class="flex items-center justify-between space-x-4  2xl:container">
+               <!--search bar -->
+               <div hidden class="md:block w-[625px]">
+                  <div class="relative flex items-center text-gray-400 focus-within:text-emerald-400">
+                     <input type="search" name="leadingIcon" id="leadingIcon" placeholder="Search here"
+                        class="w-full placeholder-[#808191] rounded-xl border border-gray-300 py-2.5 pl-4 pr-4 text-sm text-black dark:text-black outline-none  focus:border-emerald-300 dark:border-gray-700 dark:focus:opacity-100 dark:opacity-10 dark:bg-white"/>
+                    
+                  </div>
+               </div>
+               <!--/search bar -->
+               <button class="-mr-2 h-16 w-12 border-r dark:border-gray-700 dark:text-gray-300 lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="my-auto h-6 w-6" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
-            <div class="flex space-x-4">
-                <button aria-label="search"
-                        class="h-10 w-10 rounded-xl border bg-gray-100 active:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:active:bg-gray-800 md:hidden">
-                    <svg xmlns="http://ww50w3.org/2000/svg"
-                         class="mx-auto w-4 fill-current text-gray-600 dark:text-gray-300" viewBox="0 0 35.997 36.004">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  </svg>
+               </button>
+               <div class="flex space-x-4 items-center">
+                  <button aria-label="search"
+                     class="h-10 w-10 rounded-xl border bg-gray-100 active:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:active:bg-gray-800 md:hidden">
+                     <svg xmlns="http://ww50w3.org/2000/svg"
+                        class="mx-auto w-4 fill-current text-gray-600 dark:text-gray-300" viewBox="0 0 35.997 36.004">
                         <path id="Icon_awesome-search" data-name="search"
-                              d="M35.508,31.127l-7.01-7.01a1.686,1.686,0,0,0-1.2-.492H26.156a14.618,14.618,0,1,0-2.531,2.531V27.3a1.686,1.686,0,0,0,.492,1.2l7.01,7.01a1.681,1.681,0,0,0,2.384,0l1.99-1.99a1.7,1.7,0,0,0,.007-2.391Zm-20.883-7.5a9,9,0,1,1,9-9A8.995,8.995,0,0,1,14.625,23.625Z"></path>
-                    </svg>
+                           d="M35.508,31.127l-7.01-7.01a1.686,1.686,0,0,0-1.2-.492H26.156a14.618,14.618,0,1,0-2.531,2.531V27.3a1.686,1.686,0,0,0,.492,1.2l7.01,7.01a1.681,1.681,0,0,0,2.384,0l1.99-1.99a1.7,1.7,0,0,0,.007-2.391Zm-20.883-7.5a9,9,0,1,1,9-9A8.995,8.995,0,0,1,14.625,23.625Z"></path>
+                     </svg>
+                  </button>
+                  <div class="items-center flex space-x-[6px]">
+                     <div x-data="{profileOpen: false} " class="relative ml-3 ">
+                        <div>
+                            <button @click="profileOpen=! profileOpen " type="button " class="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-autom8-blue-500 focus:ring-offset-2 " id="user-menu-button
+                                " aria-expanded="false " aria-haspopup="true ">
+                                <span class="sr-only ">Open user menu</span>
+                                <img class="h-8 w-8 rounded-full " src="./images/dp.svg" alt=" ">
+                            </button>
+                        </div>
+   
+                        <!-- Dropdown menu, show/hide based on menu state. -->
+                        <div x-cloak x-show="profileOpen " @click="profileOpen=! profileOpen " x-transition:enter="transition ease-out duration-100 " x-transition:enter-start="transform opacity-0 scale-95 " x-transition:enter-end="transform opacity-100
+                                    scale-100 " x-transition:leave="transition ease-in duration-75 " x-transition:leave-start="transform opacity-100 scale-100 " x-transition:leave-end="transform opacity-0 scale-95 " class="absolute right-0 z-10 mt-2 w-48
+                                    origin-top-right rounded-md bg-white  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none " role="menu " aria-orientation="vertical " aria-labelledby="user-menu-button " tabindex="-1 ">
+                            <!-- Active: "bg-gray-100 ", Not Active: " " -->
+                            <a href="./UserDetails.html " class="block px-4 py-2 text-sm dark:text-gray-500 text-black hover:bg-autom8-blue-100 font-medium hover:text-white " role="menuitem " tabindex="-1 " id="user-menu-item-0 ">Profile</a>
+   
+                            <a href="# " class="block px-4 py-2 text-sm dark:text-gray-500 text-black hover:bg-autom8-blue-100 font-medium hover:text-white " role="menuitem " tabindex="-1 " id="user-menu-item-1 ">Settings</a>
+   
+                            <a href="# " class="block px-4 py-2 text-sm dark:text-gray-500 text-black hover:bg-autom8-blue-100 font-medium hover:text-white " role="menuitem " tabindex="-1 " id="user-menu-item-2 ">Sign out</a>
+                        </div>
+                    </div>
+                     <p class="dark:text-white text-black text-sm leading-[13px] tracking-[0.5px]">
+                        Thomas 
+                     </p>
+                     <img src="./images/chevron_down.svg" class="h-5 cursor-pointer"/>
+                  </div>
+                  
+                  <div>
+                     <button type="button " 
+                     class="relative rounded-full bg-white dark:bg-[#1F1D2B] p-1 dark:text-[#808191] text-black hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-autom8-blue-800 focus:ring-offset-2 ">
+                        <span class="sr-only ">View notifications</span>
+                        <!-- Heroicon name: outline/bell -->
+                <svg class="h-6 w-6 " xmlns="http://www.w3.org/2000/svg " fill="none " viewBox="0 0 24 24 " stroke-width="1.5 " stroke="currentColor " aria-hidden="true ">
+                        <path stroke-linecap="round " stroke-linejoin="round " d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714
+                            0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0 " />
+                        </svg>
+                <span class="absolute top-0 right-0 mr-1.5 mt-1 ring-2 ring-white rounded-full h-2 w-2 bg-red-500 "></span>
                 </button>
-                <button aria-label="chat"
-                        class="h-10 w-10 rounded-xl border bg-gray-100 active:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:active:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="m-auto h-5 w-5 text-gray-600 dark:text-gray-300"
-                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
-                    </svg>
-                </button>
-                <button aria-label="notification"
-                        class="h-10 w-10 rounded-xl border bg-gray-100 active:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:active:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="m-auto h-5 w-5 text-gray-600 dark:text-gray-300"
-                         viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/>
-                    </svg>
-                </button>
-                <div class="avatar">
-                    <img class="ring-offset-base-100 h-9 w-9 rounded-full bg-red-200 bg-cover ring ring-emerald-500 ring-offset-2"
-                         src="https://placeimg.com/192/192/people"/>
-                </div>
+                     <!--img src="./images/chevron_down.svg" class="h-5 cursor-pointer"/-->
+                  </div>
+                  <!--div class="items-center group">
+                    
+                     <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                      class="cursor-pointer text-[#808191] group-hover:text-[#FF7551]">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5892 10.3303C15.5892 11.3769 15.8659 11.9938 16.4746 12.7047C16.9359 13.2284 17.0834 13.9007 17.0834 14.63C17.0834 15.3585 16.844 16.0501 16.3645 16.6116C15.7367 17.2847 14.8513 17.7144 13.9477 17.7891C12.6383 17.9008 11.3281 17.9948 10.0004 17.9948C8.67197 17.9948 7.36256 17.9385 6.05315 17.7891C5.14873 17.7144 4.26337 17.2847 3.63641 16.6116C3.15687 16.0501 2.91669 15.3585 2.91669 14.63C2.91669 13.9007 3.06494 13.2284 3.52543 12.7047C4.15322 11.9938 4.41162 11.3769 4.41162 10.3303V9.97524C4.41162 8.57361 4.76113 7.65709 5.48085 6.75988C6.55091 5.4514 8.26615 4.66666 9.96316 4.66666H10.0377C11.7712 4.66666 13.5419 5.48917 14.5937 6.85388C15.2762 7.73263 15.5892 8.61054 15.5892 9.97524V10.3303ZM7.5614 19.7174C7.5614 19.2977 7.94652 19.1055 8.30266 19.0233C8.71925 18.9351 11.2577 18.9351 11.6743 19.0233C12.0305 19.1055 12.4156 19.2977 12.4156 19.7174C12.3949 20.1169 12.1605 20.4711 11.8367 20.696C11.4168 21.0233 10.924 21.2306 10.4088 21.3053C10.1239 21.3423 9.84397 21.3431 9.569 21.3053C9.05302 21.2306 8.56023 21.0233 8.14115 20.6952C7.81649 20.4711 7.58211 20.1169 7.5614 19.7174Z" fill="#808191"/>
+                        <circle class="text-[#808191] group-hover:text-[#FF7551]" cx="15" cy="4.77783" r="3.6" fill="#EC5252" stroke="#1E2127" stroke-width="1.2"/>
+                        </svg>
+                        
+                  </div-->
+                  
+                  
+               </div>
             </div>
-
-        </div>
-    </div>
-
-    <div class="pr-7  2xl:container">
-
-        <div class="h-[80vh] justify-center">
-            <div class="lg:mb-7">
-                <span class="text-base lg:text-[40px] leading-[40px] font-semibold text-black dark:text-white ">Discover</span>
-
-            </div>
-
-            <div class="relative  flex flex-col md:flex-row justify-between md:space-x-5 w-full">
-
-
-                <div class="relative md:h-[360px] md:w-2/3  rounded-2xl bg-gradient-to-r from-teal-500 to-transparent bg-no-repeat bg-cover bg-blend-multiply"
+         </div>
+         <div class="xl:pr-7 px-2  2xl:container">
+            <div class="h-[80vh] justify-center">
+               <div class="lg:mb-7">
+                  <span class="text-base lg:text-[40px] leading-[40px] font-semibold text-black dark:text-white ">Discover</span>
+               </div>
+               <div class="relative  flex flex-col md:flex-row justify-between md:space-x-5 w-full">
+                  <div class="relative md:h-[360px] md:w-2/3  rounded-2xl bg-gradient-to-r from-teal-500 to-transparent bg-no-repeat bg-cover bg-blend-multiply"
                      style="background-image: url('./images/bg-1.svg');">
-
-                    <div class="absolute bottom-5 right-5 flex backdrop-blur-sm hidden md:block">
+                     <div class="absolute bottom-5 right-5 flex backdrop-blur-sm hidden md:block">
                         <span class="text-medium text-[10px] rounded-full opacity-50 bg-[#242730] px-2 text-white py-[5px]">7 min</span>
-                    </div>
-                    <div class="relative lg:pl-10 pl-5 flex  flex-col w-full md:w-2/5 pt-10 pb-5 md:space-y-7 justify-start">
+                     </div>
+                     <div class="relative lg:pl-10 pl-5 flex  flex-col w-full md:w-2/5 pt-10 pb-5 md:space-y-7 justify-start">
                         <span class="text-base md:text-[30px] leading-[30px] font-medium text-left text-white tracking-[0.3px]">How to do
-                    Basic Jumping
-                    and how to
-                    landing safely
+                        Basic Jumping
+                        and how to
+                        landing safely
                         </span>
-
                         <div class="flex flex-col items-start md:flex-row shrink-0 md:items-center space-x-3">
-
-                            <div>
-                                <img src="images/profile.png" class="h-[60px]"/>
-                            </div>
-                            <div class="flex flex-col space-y-2">
-                                <p class="text-black dark:text-white font-medium text-[15px] leading-[15px] ">
-                                    Thomas Hope
-                                </p>
-
-
-                                <p class="text-xs font-normal opacity-80 text-black dark:text-white">
-                                    53K views
-                                    <span class="text-black dark:text-white text-xs font-normal opacity-80">
-                                       •
-                                    </span>
-
-                                    2 weeks ago
-                                </p>
-
-
-                            </div>
+                           <div>
+                              <img src="images/profile.png" class="h-[60px]"/>
+                           </div>
+                           <div class="flex flex-col space-y-2">
+                              <p class="text-black dark:text-white font-medium text-[15px] leading-[15px] ">
+                                 Thomas Hope
+                              </p>
+                              <p class="text-xs font-normal opacity-80 text-black dark:text-white">
+                                 53K views
+                                 <span class="text-black dark:text-white text-xs font-normal opacity-80">
+                                 •
+                                 </span>
+                                 2 weeks ago
+                              </p>
+                           </div>
                         </div>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                        style="background-image: url('./images/bg-2.svg');"
-                        class="relative block  w-full  md:w-1/3  rounded-xl  bg-gradient-to-r from-[#d37517] to-transparent bg-cover bg-no-repeat bg-blend-multiply"
-                >
-
-                    <div class="absolute bottom-5 right-5 flex backdrop-blur-sm hidden md:block">
+                     </div>
+                  </div>
+                  <div
+                     style="background-image: url('./images/bg-2.svg');"
+                     class="relative block  w-full  md:w-1/3  rounded-xl  bg-gradient-to-r from-[#d37517] to-transparent bg-cover bg-no-repeat bg-blend-multiply"
+                     >
+                     <div class="absolute bottom-5 right-5 flex backdrop-blur-sm hidden md:block">
                         <span class="text-medium text-[10px] rounded-full opacity-50 bg-[#242730] px-2 text-white py-[5px]">10 min</span>
-                    </div>
-                    <div class="relative md:pl-10 pl-5 flex flex-col w-full md:w-2/3 pt-10 pb-5 md:space-y-7 justify-start">
+                     </div>
+                     <div class="relative md:pl-10 pl-5 flex flex-col w-full md:w-2/3 pt-10 pb-5 md:space-y-7 justify-start">
                         <span class="text-3xl font-semibold text-left text-white tracking-[0.3px]">
-                    Skateboard
-                    Tips You need
-                    to know
+                        Skateboard
+                        Tips You need
+                        to know
                         </span>
-
                         <div class="flex flex-col items-start space-y-5">
-                            <div class="flex flex-col">
-                                <p class="text-black dark:text-white font-medium text-[15px] leading-[15px] ">
-                                    Thomas Hope
-                                </p>
-
-
-                                <p class="text-xs font-normal opacity-80 text-black dark:text-white">
-                                    53K views
-                                    <span class="text-black dark:text-white text-xs font-normal opacity-80">
-                                       •
-                                    </span>
-
-                                    2 weeks ago
-                                </p>
-
-
-                            </div>
-                            <div>
-                                <img src="images/profile.png" class="h-[60px]"/>
-                            </div>
-
+                           <div class="flex flex-col">
+                              <p class="text-black dark:text-white font-medium text-[15px] leading-[15px] ">
+                                 Thomas Hope
+                              </p>
+                              <p class="text-xs font-normal opacity-80 text-black dark:text-white">
+                                 53K views
+                                 <span class="text-black dark:text-white text-xs font-normal opacity-80">
+                                 •
+                                 </span>
+                                 2 weeks ago
+                              </p>
+                           </div>
+                           <div>
+                              <img src="images/profile.png" class="h-[60px]"/>
+                           </div>
                         </div>
-
-                    </div>
-
-                </div>
-
+                     </div>
+                  </div>
+               </div>
+               <div class=" py-2  lg:pt-12 lg:pb-7 overflow-auto rounded-xl">
+                  <span class="text-base lg:text-[28px] leading-[28px] font-medium text-black dark:text-white">Most Watched</span>
+                  <!-- Contents -->
+                  <div class=" grid grid-cols-1 sm:grid-cols-2    md:grid-cols-4  w-full gap-5  lg:py-7">
+                    <div class="self-stretch w-full h-full mx-auto">
+                        <div class="bg-white relative shadow-md border border-gray-200 rounded-[20px] max-w-sm dark:bg-[#242730] dark:border-[#242730] ">
+                           <a href="#">
+                           <img class="rounded-t-[20px] w-full" src="./images/andy-williams.svg" alt="">
+                           </a>
+                           <div class="lg:p-5 p-2 relative">
+                            <div class="absolute hidden xl:block right-2 -top-3 xl:right-5 xl:-top-6">
+                                <img class="lg:h-[60px] h-7 shrink-0" src="./images/andy-1.png" alt="">
+                            </div>
+                              <p class="lg:text-[13px] text-[9px] lg:tracking-[0.5px] lg:leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">
+                                 <span class="inline-flex items-center gap-x-2 ">
+                                    Andy
+                                    William
+                                    <svg class="h-1.5 w-1.5 fill-[#22B07D]" viewBox="0 0 6 6" aria-hidden="true">
+                                       <circle cx="3" cy="3" r="3" />
+                                    </svg>
+                                 </span>
+                              </p>
+                              <p class="lg:text-base text-xs font-medium lg:leading-[26px] tracking-[0.3px]
+                                 dark:text-white text-black pb-2 lg:pb-4">Basic how to ride
+                                 your skateboard comfortly
+                              </p>
+                              <p class="text-xs font-normal tracking-[0.5px] text-black opacity-80 dark:text-[#808191]">
+                                 53K views
+                                 <span class="text-xs font-normal  text-black opacity-80 dark:text-[#808191]"> • </span>
+                                 2 weeks ago
+                              </p>
+                           </div>
+                           
+                           <div class="absolute top-2 right-2 flex backdrop-blur-sm hidden md:block">
+                            <span class="text-medium text-[10px] leading-[10px] font-medium tracking-[0.5px] rounded-lg bg-opacity-50 bg-[#242730] px-2 text-white py-[5px]">7 min</span>
+                         </div>
+                        </div>
+                     </div>
+                     <div class="self-stretch w-full h-full mx-auto">
+                        <div class="bg-white relative shadow-md border border-gray-200 rounded-[20px] max-w-sm dark:bg-[#242730] dark:border-[#242730] ">
+                           <a href="#">
+                           <img class="rounded-t-[20px] w-full" src="./images/john.svg" alt="">
+                           </a>
+                           <div class="lg:p-5 p-2 relative">
+                            <div class="absolute hidden xl:block right-2 -top-3 xl:right-5 xl:-top-6">
+                                <img class="lg:h-[60px] h-7 shrink-0" src="./images/john-1.svg" alt="">
+                            </div>
+                              <p class="lg:text-[13px] text-[9px] lg:tracking-[0.5px] lg:leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">
+                                 <span class="inline-flex items-center gap-x-2 ">
+                                    Johny Wise
+                                    <svg class="h-1.5 w-1.5 fill-[#22B07D]" viewBox="0 0 6 6" aria-hidden="true">
+                                       <circle cx="3" cy="3" r="3" />
+                                    </svg>
+                                 </span>
+                              </p>
+                              <p class="lg:text-base text-xs font-medium lg:leading-[26px] tracking-[0.3px]
+                                 dark:text-white text-black pb-2 lg:pb-4">
+                                 Prepare for your first skateboard jump
+                              </p>
+                              <p class="text-xs font-normal tracking-[0.5px] text-black opacity-80 dark:text-[#808191]">
+                                 53K views
+                                 <span class="text-xs font-normal  text-black opacity-80 dark:text-[#808191]"> • </span>
+                                 2 weeks ago
+                              </p>
+                           </div>
+                           
+                           <div class="absolute top-2 right-2 flex backdrop-blur-sm hidden md:block">
+                            <span class="text-medium text-[10px] leading-[10px] font-medium tracking-[0.5px] rounded-lg bg-opacity-50 bg-[#242730] px-2 text-white py-[5px]">7 min</span>
+                         </div>
+                        </div>
+                     </div>
+                     <div class="self-stretch w-full h-full mx-auto">
+                        <div class="bg-white relative shadow-md border border-gray-200 rounded-[20px] max-w-sm dark:bg-[#242730] dark:border-[#242730] ">
+                           <a href="#">
+                           <img class="rounded-t-[20px] w-full" src="./images/budi.svg" alt="">
+                           </a>
+                           <div class="lg:p-5 p-2 relative">
+                            <div class="absolute hidden xl:block right-2 -top-3 xl:right-5 xl:-top-6">
+                                <img class="lg:h-[60px] h-7 shrink-0" src="./images/budi-1.svg" alt="">
+                            </div>
+                              <p class="lg:text-[13px] text-[9px] lg:tracking-[0.5px] lg:leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">
+                                 <span class="inline-flex items-center gap-x-2 ">
+                                    Budi Hakim
+                                    <svg class="h-1.5 w-1.5 fill-[#22B07D]" viewBox="0 0 6 6" aria-hidden="true">
+                                       <circle cx="3" cy="3" r="3" />
+                                    </svg>
+                                 </span>
+                              </p>
+                              <p class="lg:text-base text-xs font-medium lg:leading-[26px] tracking-[0.3px]
+                                 dark:text-white text-black pb-2 lg:pb-4">
+                                 Tips to playing skateboard on the ramp
+                              </p>
+                              <p class="text-xs font-normal tracking-[0.5px] text-black opacity-80 dark:text-[#808191]">
+                                 53K views
+                                 <span class="text-xs font-normal  text-black opacity-80 dark:text-[#808191]"> • </span>
+                                 2 weeks ago
+                              </p>
+                           </div>
+                           
+                           <div class="absolute top-2 right-2 flex backdrop-blur-sm hidden md:block">
+                            <span class="text-medium text-[10px] leading-[10px] font-medium tracking-[0.5px] rounded-lg bg-opacity-50 bg-[#242730] px-2 text-white py-[5px]">7 min</span>
+                         </div>
+                        </div>
+                     </div>
+                     <div class="self-stretch w-full h-full mx-auto">
+                        <div class="bg-white relative shadow-md border border-gray-200 rounded-[20px] max-w-sm dark:bg-[#242730] dark:border-[#242730] ">
+                           <a href="#">
+                           <img class="rounded-t-[20px] w-full" src="./images/abadi.svg" alt="">
+                           </a>
+                           <div class="lg:p-5 p-2 relative">
+                            <div class="absolute hidden xl:block right-2 -top-3 xl:right-5 xl:-top-6">
+                                <img class="lg:h-[60px] h-7 shrink-0" src="./images/abadi-1.svg" alt="">
+                            </div>
+                              <p class="lg:text-[13px] text-[9px] lg:tracking-[0.5px] lg:leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">
+                                 <span class="inline-flex items-center gap-x-2 ">
+                                    Wijaya Abadi
+                                    <svg class="h-1.5 w-1.5 fill-[#22B07D]" viewBox="0 0 6 6" aria-hidden="true">
+                                       <circle cx="3" cy="3" r="3" />
+                                    </svg>
+                                 </span>
+                              </p>
+                              <p class="lg:text-base text-xs font-medium lg:leading-[26px] tracking-[0.3px]
+                                 dark:text-white text-black pb-2 lg:pb-4">
+                                 Basic Equipment to play skateboard safely
+                              </p>
+                              <p class="text-xs font-normal tracking-[0.5px] text-black opacity-80 dark:text-[#808191]">
+                                 53K views
+                                 <span class="text-xs font-normal  text-black opacity-80 dark:text-[#808191]"> • </span>
+                                 2 weeks ago
+                              </p>
+                           </div>
+                           
+                           <div class="absolute top-2 right-2 flex backdrop-blur-sm hidden md:block">
+                            <span class="text-medium text-[10px] leading-[10px] font-medium tracking-[0.5px] rounded-lg bg-opacity-50 bg-[#242730] px-2 text-white py-[5px]">7 min</span>
+                         </div>
+                        </div>
+                     </div>
+                    
+                   
+                  </div>
+               </div>
             </div>
-
-
-            <div class="relative py-2  lg:pt-12 lg:pb-7 overflow-auto rounded-xl">
-
-                <span class="text-base lg:text-[28px] leading-[28px] font-medium text-black dark:text-white">Most Watched</span>
-                <!-- Contents -->
-                <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-5  py-7">
-
-                    <div class="max-w-2xl mx-auto">
-
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="./images/john.png" alt="">
-                            </a>
-                            <div class="p-5">
-                                <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">Andy
-                                    Williams</p>
-                                <p class="text-base font-medium dark:text-white text-black pb-2 md:pb-4">Basic how to ride
-                                                                   your skateboard comfortly</p>
-                                                               <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                                                   53K views
-                                                                   <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
-
-                                                                    2 weeks ago
-                                                               </p>
-
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                    <div class="max-w-2xl mx-auto">
-
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="./images/john.png" alt="">
-                            </a>
-                            <div class="p-5">
-                                <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">Andy
-                                    Williams</p>
-                                <p class="text-base font-medium dark:text-white text-black pb-2 md:pb-4">Basic how to ride
-                                    your skateboard comfortly</p>
-                                <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                    53K views
-                                    <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
-
-                                    2 weeks ago
-                                </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="max-w-2xl mx-auto">
-
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="./images/john.png" alt="">
-                            </a>
-                            <div class="p-5">
-                                <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">Andy
-                                    Williams</p>
-                                <p class="text-base font-medium dark:text-white text-black pb-2 md:pb-4">Basic how to ride
-                                    your skateboard comfortly</p>
-                                <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                    53K views
-                                    <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
-
-                                    2 weeks ago
-                                </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="max-w-2xl mx-auto">
-
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="./images/john.png" alt="">
-                            </a>
-                            <div class="p-5">
-                                <p class="text-[13px] leading-[13px] dark:text-[#B7B9D2] text-black pb-1 md:pb-3">Andy
-                                    Williams</p>
-                                <p class="text-base font-medium dark:text-white text-black pb-2 md:pb-4">Basic how to ride
-                                    your skateboard comfortly</p>
-                                <p class="text-xs font-normal text-black opacity-80 dark:text-white">
-                                    53K views
-                                    <span class="text-xs font-normal text-black opacity-80 dark:text-white"> • </span>
-
-                                    2 weeks ago
-                                </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
-
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </body>
-                                    </html>
+         </div>
+      </div>
+   </body>
+</html>
